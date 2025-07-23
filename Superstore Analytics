@@ -1,0 +1,27 @@
+# In this SQL, I am querying a superstore database to quantify statistics about each item.
+
+-- Query 1: Orders the items by price
+
+SELECT item_name, price
+FROM superstore
+ORDER BY price;
+
+
+-- Query 2: Shows the item with the lowest price.
+
+SELECT MIN(price), item_name
+FROM superstore;
+
+
+-- Query 3: Shows the item with the highest price in the category of Kitchen Supplies.
+
+SELECT MAX(price), item_name, category
+FROM superstore
+WHERE category = "Kitchen Supplies";
+
+
+-- Query 4: Gets how many Cotton Bedding Sets are in stock.
+
+SELECT SUM(stock_quantity), item_name
+FROM superstore
+WHERE item_name = "Cotton Bedding Set";
